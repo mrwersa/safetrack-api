@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Contact Verified</title>
+    <div th:replace="~{base :: head}"></div>
+</head>
+<body>
+    <div class="container">
+        <div th:replace="~{base :: header}"></div>
+        <div class="content" th:fragment="content">
+            <h1>Emergency Contact Verified</h1>
+            
+            <p>Hello <span th:text="${userName}">User</span>,</p>
+            
+            <p>Good news! <strong><span th:text="${contactName}">Contact</span></strong> has confirmed your request to be your emergency contact on SafeTrack.</p>
+            
+            <div class="info-box">
+                <p>They are now set up to receive notifications about:</p>
+                <ul>
+                    <li>Emergency SOS alerts</li>
+                    <li>Your location during emergencies</li>
+                    <li>Other safety alerts based on your notification settings</li>
+                </ul>
+            </div>
+            
+            <p>You can manage your emergency contacts and their notification settings at any time from your SafeTrack dashboard.</p>
+            
+            <a th:href="${baseUrl + '/dashboard/contacts'}" class="button">Manage Emergency Contacts</a>
+            
+            <p>Thank you for using SafeTrack to keep connected with those who care about you.</p>
+            
+            <p>Stay safe,<br>The SafeTrack Team</p>
+        </div>
+        <div th:replace="~{base :: footer}"></div>
+    </div>
+</body>
+</html>
+

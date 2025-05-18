@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeTrack</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fa;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .logo {
+            max-width: 180px;
+            height: auto;
+        }
+        .content {
+            padding: 30px 20px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #6c757d;
+            border-top: 1px solid #e9ecef;
+        }
+        h1 {
+            color: #2b5797;
+            margin-top: 0;
+        }
+        h2 {
+            color: #3a6eaa;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 15px 0;
+            background-color: #2b5797;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .button-secondary {
+            background-color: #6c757d;
+        }
+        .button-alert {
+            background-color: #dc3545;
+        }
+        .info-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #2b5797;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .alert-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .emergency-box {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .map-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .map-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #2b5797;
+        }
+        
+        /* Responsive styles */
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 100% !important;
+                padding: 10px !important;
+            }
+            .content {
+                padding: 20px 15px !important;
+            }
+            .button {
+                display: block !important;
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://via.placeholder.com/180x60?text=SafeTrack" alt="SafeTrack Logo" class="logo">
+        </div>
+        <div class="content">
+            <!-- Content will be placed here -->
+            <div th:replace="~{::content}"></div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 SafeTrack. All rights reserved.</p>
+            <p>SafeTrack is designed to help keep you and your loved ones safe.</p>
+            <p>This email was sent to you as part of your SafeTrack account settings. 
+               <br>If you believe this was sent in error, please contact us at support@safetrack.com</p>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inactivity Alert</title>
+    <div th:replace="~{base :: head}"></div>
+</head>
+<body>
+    <div class="container">
+        <div th:replace="~{base :: header}"></div>
+        <div class="content" th:fragment="content">
+            <h1 style="color: #ff9800;">Inactivity Alert</h1>
+            
+            <p>Hello <span th:text="${contactName}">Contact</span>,</p>
+            
+            <div class="alert-box">
+                <h2><span th:text="${userFirstName}">User</span> has not been active for an unusual period</h2>
+                <p><strong>Last seen:</strong> <span th:text="${lastSeenTime}">Last Seen Time</span></p>
+                <p><strong>Current time:</strong> <span th:text="${timestamp}">Timestamp</span></p>
+            </div>
+            
+            <p>You are receiving this notification because you are registered as an emergency contact for <span th:text="${userName}">User</span> with inactivity alerts enabled.</p>
+            
+            <div class="info-box">
+                <p><strong>What to do now:</strong></p>
+                <ul>
+                    <li>Try to contact them directly</li>
+                    <li>This could be due to their device being turned off or out of battery</li>
+                    <li>If you cannot reach them and are concerned, consider checking other contacts or locations they might be</li>
+                </ul>
+            </div>
+            
+            <p>You can access more information about the user by logging into your SafeTrack account.</p>
+            
+            <a th:href="${baseUrl + '/dashboard'}" class="button">Go to Dashboard</a>
+            
+            <p>Please note that inactivity alerts are informational and may not always indicate an emergency situation.</p>
+            
+            <p>SafeTrack Alert System</p>
+        </div>
+        <div th:replace="~{base :: footer}"></div>
+    </div>
+</body>
+</html>
+

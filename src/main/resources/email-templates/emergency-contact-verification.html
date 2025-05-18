@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Contact Verification</title>
+    <div th:replace="~{base :: head}"></div>
+</head>
+<body>
+    <div class="container">
+        <div th:replace="~{base :: header}"></div>
+        <div class="content" th:fragment="content">
+            <h1>Emergency Contact Verification</h1>
+            
+            <p>Hello <span th:text="${contactName}">Contact</span>,</p>
+            
+            <p><strong><span th:text="${userName}">User</span></strong> has added you as an emergency contact on SafeTrack.</p>
+            
+            <div class="info-box">
+                <p>As an emergency contact, you may:</p>
+                <ul>
+                    <li>Receive alerts if <span th:text="${userName}">User</span> triggers an SOS</li>
+                    <li>Get updates on their location during emergencies</li>
+                    <li>Receive notifications based on their safety settings</li>
+                </ul>
+            </div>
+            
+            <p>If you agree to be their emergency contact, please click the button below to verify:</p>
+            
+            <a th:href="${verificationLink}" class="button">Confirm as Emergency Contact</a>
+            
+            <p>If you do not wish to be their emergency contact, you can decline by clicking here:</p>
+            
+            <a th:href="${declineLink}" class="button button-secondary">Decline Request</a>
+            
+            <p>If you have any questions, please contact <span th:text="${userName}">User</span> directly.</p>
+            
+            <p>Thank you,<br>The SafeTrack Team</p>
+        </div>
+        <div th:replace="~{base :: footer}"></div>
+    </div>
+</body>
+</html>
+

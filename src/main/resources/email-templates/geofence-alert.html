@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geofence Alert</title>
+    <div th:replace="~{base :: head}"></div>
+</head>
+<body>
+    <div class="container">
+        <div th:replace="~{base :: header}"></div>
+        <div class="content" th:fragment="content">
+            <h1 style="color: #ff9800;">Geofence Alert</h1>
+            
+            <p>Hello <span th:text="${contactName}">Contact</span>,</p>
+            
+            <div class="alert-box">
+                <h2><span th:text="${userFirstName}">User</span> has left <span th:text="${geofenceName}">Safe Area</span></h2>
+                <p><strong>Time:</strong> <span th:text="${timestamp}">Timestamp</span></p>
+                <p><strong>Location:</strong> <span th:text="${location}">Location</span></p>
+            </div>
+            
+            <div class="map-container">
+                <p>View their location on a map:</p>
+                <a th:href="${mapLink}" class="button">View Location</a>
+            </div>
+            
+            <p>You are receiving this notification because you are registered as an emergency contact for <span th:text="${userName}">User</span> with geofence alerts enabled.</p>
+            
+            <div class="info-box">
+                <p><strong>What to do now:</strong></p>
+                <ul>
+                    <li>Be aware of their current location</li>
+                    <li>Consider contacting them if this seems unusual</li>
+                    <li>Monitor for additional alerts if needed</li>
+                </ul>
+            </div>
+            
+            <p>You can access more information and the user's location history by logging into your SafeTrack account.</p>
+            
+            <a th:href="${baseUrl + '/dashboard'}" class="button">Go to Dashboard</a>
+            
+            <p>Thank you for helping keep your contacts safe.</p>
+            
+            <p>SafeTrack Alert System</p>
+        </div>
+        <div th:replace="~{base :: footer}"></div>
+    </div>
+</body>
+</html>

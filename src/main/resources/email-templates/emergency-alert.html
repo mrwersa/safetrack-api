@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMERGENCY ALERT</title>
+    <div th:replace="~{base :: head}"></div>
+</head>
+<body>
+    <div class="container">
+        <div th:replace="~{base :: header}"></div>
+        <div class="content" th:fragment="content">
+            <h1 style="color: #dc3545;">⚠️ EMERGENCY ALERT ⚠️</h1>
+            
+            <p>Hello <span th:text="${contactName}">Contact</span>,</p>
+            
+            <div class="emergency-box">
+                <h2><span th:text="${userFirstName}">User</span> has triggered an emergency alert!</h2>
+                <p><strong>Time:</strong> <span th:text="${timestamp}">Timestamp</span></p>
+                <p><strong>Location:</strong> <span th:text="${location}">Location</span></p>
+                <p><strong>Message:</strong> <span th:text="${message}">Message</span></p>
+            </div>
+            
+            <div class="map-container">
+                <p>View their location on a map:</p>
+                <a th:href="${mapLink}" class="button button-alert">View Location</a>
+            </div>
+            
+            <p>You are receiving this alert because you are registered as an emergency contact for <span th:text="${userName}">User</span>.</p>
+            
+            <div class="info-box">
+                <p><strong>What to do now:</strong></p>
+                <ol>
+                    <li>Try to contact them directly</li>
+                    <li>Check their last known location</li>
+                    <li>If you cannot reach them and are concerned, consider contacting emergency services</li>
+                </ol>
+            </div>
+            
+            <p>You can access more information and the user's location history by logging into your SafeTrack account.</p>
+            
+            <a th:href="${baseUrl + '/emergency-response'}" class="button">Go to Emergency Response</a>
+            
+            <p>Please respond to this emergency alert as soon as possible.</p>
+            
+            <p>SafeTrack Emergency System</p>
+        </div>
+        <div th:replace="~{base :: footer}"></div>
+    </div>
+</body>
+</html>
+

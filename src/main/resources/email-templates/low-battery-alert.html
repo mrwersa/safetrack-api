@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Low Battery Alert</title>
+    <div th:replace="~{base :: head}"></div>
+</head>
+<body>
+    <div class="container">
+        <div th:replace="~{base :: header}"></div>
+        <div class="content" th:fragment="content">
+            <h1 style="color: #ff9800;">Low Battery Alert</h1>
+            
+            <p>Hello <span th:text="${contactName}">Contact</span>,</p>
+            
+            <div class="alert-box">
+                <h2><span th:text="${userFirstName}">User</span>'s device battery is critically low</h2>
+                <p><strong>Battery level:</strong> <span th:text="${batteryPercentage}">5</span>%</p>
+                <p><strong>Last known location:</strong> <span th:text="${location}">Location</span></p>
+                <p><strong>Time:</strong> <span th:text="${timestamp}">Timestamp</span></p>
+            </div>
+            
+            <div class="map-container">
+                <p>View their last known location on a map:</p>
+                <a th:href="${mapLink}" class="button">View Location</a>
+            </div>
+            
+            <p>You are receiving this notification because you are registered as an emergency contact for <span th:text="${userName}">User</span> with low battery alerts enabled.</p>
+            
+            <div class="info-box">
+                <p><strong>What this means:</strong></p>
+                <ul>
+                    <li>The user's device will likely power off soon</li>
+                    <li>Their location tracking may become unavailable</li>
+                    <li>They may not receive messages or calls</li>
+                </ul>
+            </div>
+            
+            <p>If you need to contact them, it's recommended to do so as soon as possible, before their device turns off.</p>
+            
+            <a th:href="${baseUrl + '/dashboard'}" class="button">Go to Dashboard</a>
+            
+            <p>Thank you for helping keep your contacts safe.</p>
+            
+            <p>SafeTrack Alert System</p>
+        </div>
+        <div th:replace="~{base :: footer}"></div>
+    </div>
+</body>
+</html>
+
